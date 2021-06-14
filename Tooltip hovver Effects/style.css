@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightpink;
+}
+
+.header{
+    text-align: center;
+    color: white;
+}
+
+.header .header-title {
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.12);
+}
+
+.body-content{
+    margin-top: 150px;
+    /* margin-left: 150px; */
+    text-align: center;
+}
+
+.body-content form{
+    position: relative;
+}
+.body-content form label{
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.body-content form input{
+    margin: 0 10px;
+    padding: 8px 8px 6px;
+    font-size: 18px;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    color: rebeccapurple;
+    font-weight: 500;
+}
+.body-content form .tooltip{
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 12px;
+    border-radius: 100%;
+    font-size: 18px;
+    cursor: help;
+}
+.body-content form .tooltip::before , .body-content form .tooltip::after{
+   position: absolute;
+   left: 50%;
+   opacity: 0;
+   transition: 0.5s ease-in;
+}
+.body-content form .tooltip::before{
+    content: "";
+    border-width: 10px 8px 0px 8px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
+    transform: translateX(-45%);
+    top: -11px;
+}
+.body-content form .tooltip::after{
+    content: attr(data-tooltip);
+    background: rgba(0, 0, 0, 0.1);
+    top: -11px;
+    font-size: 12px;
+    width: 200px;
+    transform: translateX(-50%) translateY(-100%);
+    border-radius: 20px;
+    padding: 12px;
+}
+.body-content form .tooltip:hover::after, .body-content form .tooltip:hover::before{
+    opacity: 1;
+}
+
+
+
+
+.body-content ul{
+    display: flex;
+    justify-content: center;
+}
+.body-content  li{
+    position: relative;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-color: rebeccapurple;
+    margin: 0 20px;
+    border-radius: 50%;
+    transition: .5s;
+    cursor: pointer;
+}
+.body-content  li:hover{
+    background: lightgreen;
+    box-shadow: 0 0 0 4px lightpink,
+                0 0 0 6px lightgreen;
+}
+
+.body-content  li .info-bull{
+    position: absolute;
+    bottom: 50px;
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(-50%) translateY(-50px);
+}
+.body-content  li .info-bull:before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    bottom: -15px;
+    transform: rotate(45deg) translateX(-25%);
+}
+.body-content  li:hover .info-bull{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0px);
+}
